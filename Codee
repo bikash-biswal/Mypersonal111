@@ -1,1 +1,7 @@
-Hi Sachin, mera Postman app me login nahi ho raha hai. Sign in karne par [error message / kuch load nahi ho raha] aa raha hai. Kya aapko bhi ye issue aa raha hai, ya koi specific account / workspace se login karna hai? Please help kar do.
+Ab teeno counts mil gaye:
+
+Error Type	Count
+403 Forbidden	174
+500 Internal Server Error	13
+HTML/JSON Parse Error (Unexpected character)	26
+Total	213
