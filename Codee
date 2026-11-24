@@ -1,4 +1,6 @@
-fields @timestamp, @message
-| filter @message like /mibl/
-| sort @timestamp desc
-| limit 100
+Hi Adarsh, today's KT update:
+• Raj gave me code-related KT and helped with the Claims project code setup.
+• Fixed the Maven/SSL issue and set up the dev environment. Building the dependent SDK projects locally now.
+• AWS access is still pending.
+
+Thanks!
