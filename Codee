@@ -1,7 +1,4 @@
-Ab teeno counts mil gaye:
-
-Error Type	Count
-403 Forbidden	174
-500 Internal Server Error	13
-HTML/JSON Parse Error (Unexpected character)	26
-Total	213
+fields @timestamp, @message
+| filter @message like /mibl/
+| sort @timestamp desc
+| limit 100
