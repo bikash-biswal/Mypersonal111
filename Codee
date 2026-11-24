@@ -1,1 +1,26 @@
-Hi Adarsh, I'm unable to build and run the Claims project due to an SSL/TLS handshake error while downloading Maven dependencies from Liberty Artifactory. I connected with Sachin More and Mustahkhan, but the issue is still unresolved. Could you please guide me on the next steps?
+Subject: Escalation: AWS Access Pending for ~2 Months – LGI Claims Project
+
+Dear [Manager Name] and [Client Manager Name],
+
+I hope you are doing well.
+
+I would like to bring to your attention that my AWS access request for the LGI Claims project has been pending for approximately 2 months. Despite multiple follow-ups with the team, the access has not yet been provisioned.
+
+Impact:
+- Unable to complete the local setup and build of the Claims service and its dependent SDKs
+- Development and KT-related activities are currently blocked
+
+Request details:
+- Name: Rakesh Kumar Sahu
+- Project: LGI – Claims
+- Access required: [AWS account / role / services]
+- Request originally raised on: [date / ticket number]
+
+I would appreciate your support in expediting this request, or guidance on the appropriate team or process to get it resolved at the earliest.
+
+Thank you for your time and support.
+
+Best regards,
+Rakesh Kumar Sahu
+[Designation]
+[Contact number]
