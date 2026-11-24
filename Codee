@@ -1,26 +1,6 @@
-Subject: Escalation: AWS Access Pending for ~2 Months – LGI Claims Project
+Hi Ambika,
+GC mein intimated claims ki list ke liye thanks.
 
-Dear [Manager Name] and [Client Manager Name],
-
-I hope you are doing well.
-
-I would like to bring to your attention that my AWS access request for the LGI Claims project has been pending for approximately 2 months. Despite multiple follow-ups with the team, the access has not yet been provisioned.
-
-Impact:
-- Unable to complete the local setup and build of the Claims service and its dependent SDKs
-- Development and KT-related activities are currently blocked
-
-Request details:
-- Name: Rakesh Kumar Sahu
-- Project: LGI – Claims
-- Access required: [AWS account / role / services]
-- Request originally raised on: [date / ticket number]
-
-I would appreciate your support in expediting this request, or guidance on the appropriate team or process to get it resolved at the earliest.
-
-Thank you for your time and support.
-
-Best regards,
-Rakesh Kumar Sahu
-[Designation]
-[Contact number]
+Baaki claims ka update kab tak milega?
+In claims ke failed services ko re-push humein karna hai ya MIBL karega?
+Kuch cases mein "Surveyor name is missing" error hai. Surveyor name MIBL bhejega ya GC side se aayega?
