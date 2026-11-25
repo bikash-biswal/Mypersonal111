@@ -1,6 +1,1 @@
-Hi Adarsh, today's KT update:
-• Raj gave me code-related KT and helped with the Claims project code setup.
-• Fixed the Maven/SSL issue and set up the dev environment. Building the dependent SDK projects locally now.
-• AWS access is still pending.
-
-Thanks!
+Sir/Ma'am, main abhi KT phase mein hoon — Raj mujhe Claims module ka knowledge transfer de rahe hain, aur code setup (Eclipse/Maven) ho raha hai. Isi ke saath Ambika ke saath kuch production incidents — MIBL aur Maruti claims ke — check kar raha hoon. Ek code-level bug bhi identify kiya hai MIBL reverse-sync flow mein, jo discuss karunga. Abhi koi PR ya deployment nahi hai mera, priority KT complete karna hai."
