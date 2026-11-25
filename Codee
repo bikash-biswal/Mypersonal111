@@ -1,1 +1,1 @@
-Ambika, 709991 check kiya — ye GC-side database issue hai. Error: package ACCEXT.ACCEXT_PKG_GC_SAP_EXTRACTION invalid state mein hai, isliye workshop/repairer details save karte waqt trigger TRG_GCCLMMST_WORKSHOP_SAP fail ho raha hai (ORA-04063/ORA-04088). Claims application code ka issue nahi hai — GC-DBA team ko escalate karna padega package fix/recompile ke liye. Kaise forward karte hain ye, bata do."
+Ambika, maine 709991 ka kiya tha, lekin 709535 aur 710155 abhi dekhna baaki hai — aur mujhe closing process bhi nahi pata (pehli baar kar raha hoon)
