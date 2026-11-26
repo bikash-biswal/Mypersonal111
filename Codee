@@ -1,29 +1,5 @@
-1. "Total claims ~3126, FAILED ~21 (0.67%)"
-
-Ye humne Query 1 se nikala tha:
-sql
-select claim_status, count(*) from claimintimationdtls
-where oem_name ilike '%MARUTI%' and last_updated_timestamp >= now() - interval '7 days'
+select claim_status, count(*) 
+from claimreversesyncdtls
+where ins_claim_no ilike '%40%'  -- ya koi Maruti-specific pattern
+  and last_updated_timestamp >= now() - interval '7 days'
 group by claim_status;
-Result mein 7 alag status categories aayi (CLAIM_REGISTERED=312, SURVEYOR_APPOINTMENT=274, SURVEYOR_DONE=818, RE-INSPECTION=15, CLAIM_ASSESSMENT=422, SETTLEMENT=1264, FAILED=21).
-Sabko jod ke total nikala = 3126.
-FAILED ka percentage = 21 ÷ 3126 × 100 = 0.67% (chhota calculation, calculator se).
-
-2. "3 claims failed due to GC-side Oracle error (ORA-00947)"
-
-Query 2 chalayi tha jisme sirf FAILED status wale 21 claims dekhe — usme dikha ki 21 mein se sirf 3 ka ins_claim_no null nahi tha (actual claim number tha).
-Un 3 claim numbers ko leke Query 3 chalayi (claimgcintegrationdtls table se claim_intimation_response dekha) — teeno mein same error message mila: "ORA-00947: not enough values" — ye ek Oracle database error hai (column/value count mismatch).
-
-3. "escalating to GC-DBA team (similar to INC 709991)"
-
-Ye comparison maine isliye kiya kyunki humne pehle 709991 incident mein bhi aisa hi dekha tha — GC database ka error (ACCEXT_PKG_GC_SAP_EXTRACTION package invalid). Dono mein common pattern: GC ke andar ka Oracle/database issue, Liberty ke Java code ka nahi — isliye same escalation path suggest kiya.
-
-4. "Remaining 18 failed claims had no claim number generated"
-
-Query 2 ke result mein dekha — 21 FAILED rows mein se 18 rows ka ins_claim_no = [null] tha (sirf 3 ka number tha). Matlab in 18 cases mein claim registration itni jaldi fail hui ki system ne claim number hi assign nahi kiya — ye alag tarah ka issue hai (input data validation jaisa kuch), isliye "separate root cause" bola.
-
-5. "All stages processing normally in expected volume"
-
-Query 1 ke result mein dekha ki har stage mein reasonable number of claims hain (312, 274, 818, 15, 422, 1264) — koi stage zero ya abnormally stuck nahi hai, isliye bola "normal volume mein chal raha hai."
-
-Ye poora analysis sirf database queries + unke results dekh ke nikala — koi bhi number guess nahi kiya, sab data se aaya hai.
