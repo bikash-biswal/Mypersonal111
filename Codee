@@ -1,5 +1,15 @@
-select claim_status, count(*) 
-from claimreversesyncdtls
-where ins_claim_no ilike '%40%'  -- ya koi Maruti-specific pattern
-  and last_updated_timestamp >= now() - interval '7 days'
-group by claim_status;
+Hi Saurav/Ambika,
+
+Maruti webservice — 7-day stability analysis (all stages):
+
+Forward flow (Intimation → Settlement): Total ~3126 claims processed. FAILED: 21 (~0.67%) — within normal/acceptable range.
+
+18 of these failed claims never generated a claim number (early validation failures — separate, low-severity issue, needs further check).
+3 failed due to GC-side Oracle error (ORA-00947: not enough values) during Claim Estimation Save — escalating to GC-DBA team (similar pattern to INC 709991).
+
+Reverse Sync (Settlement/Reverse Claim): ~4206 records processed across all stages (Surveyor Appointment, Done, Assessment, Re-inspection, Final Assessment, Settlement) — zero failures recorded.
+
+Conclusion: Maruti webservice is stable overall (>99% success rate end-to-end). Attaching query results for reference.
+
+Regards,
+Rakesh
