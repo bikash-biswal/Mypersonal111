@@ -1,1 +1,7 @@
-Hi Raj, KT ke time agar possible ho to screen-share karke ek claim ka poora journey dikha dijiye — code (controller → service → transformer → repository), fir pgAdmin mein uske corresponding data (claimintimationdtls, claimgcintegrationdtls, claimreversesyncdtls tables), aur GC portal pe wahi claim kaise register/update hoti hai. Isse mujhe poora flow ek saath clear ho jayega."
+"Hi Raj, jab bhi aapko time mile, kya aap mujhe Claims module ka poora flow A to Z samjha sakte hain? Jaise —
+
+Code flow: Controller → Service → Transformer → Repository (har OEM — Maruti, Hyundai, MIBL, Honda, Tata — ke liye)
+Database: claimintimationdtls, claimgcintegrationdtls, claimreversesyncdtls tables mein data kaise store hota hai
+GC portal: ek live claim kaise register hoti hai, workshop/repairer details kaise add hote hain
+AWS CloudWatch: production errors kaise check karte hain
+Incident portal: koi production issue aaye to standard troubleshooting process kya hota hai
