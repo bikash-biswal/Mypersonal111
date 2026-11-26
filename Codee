@@ -1,7 +1,6 @@
-select ins_claim_no, visof_claim_no, ins_policy_no, dealer_code, claim_status
-from claimintimationdtls
-where ins_policy_no in (
-  '201140020125850422700000',
-  '202550030226870021800000',
-  '202550030125850351300000'
-);
+Hi Team,
+
+Please find the claim numbers added in the attached sheet (column: Claim Numbers) against the respective estimation IDs.
+
+Regards,
+Rakesh
