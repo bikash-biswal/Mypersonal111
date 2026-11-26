@@ -1,1 +1,7 @@
-Ambika, maine 709991 ka kiya tha, lekin 709535 aur 710155 abhi dekhna baaki hai — aur mujhe closing process bhi nahi pata (pehli baar kar raha hoon)
+select ins_claim_no, visof_claim_no, ins_policy_no, dealer_code, claim_status
+from claimintimationdtls
+where ins_policy_no in (
+  '201140020125850422700000',
+  '202550030226870021800000',
+  '202550030125850351300000'
+);
