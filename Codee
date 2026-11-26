@@ -1,5 +1,6 @@
-select claim_status, count(*) 
-from claimintimationdtls
-where oem_name ilike '%MARUTI%'
-  and last_updated_timestamp >= now() - interval '7 days'
-group by claim_status;
+select n.ins_claim_no, n.oem_name, n.claim_status, n.last_updated_timestamp
+from claimintimationdtls n
+where n.oem_name ilike '%MARUTI%' 
+  and n.claim_status = 'FAILED'
+order by n.last_updated_timestamp desc
+limit 21;
