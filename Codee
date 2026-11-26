@@ -1,7 +1,5 @@
-"Hi Raj, jab bhi aapko time mile, kya aap mujhe Claims module ka poora flow A to Z samjha sakte hain? Jaise —
-
-Code flow: Controller → Service → Transformer → Repository (har OEM — Maruti, Hyundai, MIBL, Honda, Tata — ke liye)
-Database: claimintimationdtls, claimgcintegrationdtls, claimreversesyncdtls tables mein data kaise store hota hai
-GC portal: ek live claim kaise register hoti hai, workshop/repairer details kaise add hote hain
-AWS CloudWatch: production errors kaise check karte hain
-Incident portal: koi production issue aaye to standard troubleshooting process kya hota hai
+select claim_status, count(*) 
+from claimintimationdtls
+where oem_name ilike '%MARUTI%'
+  and last_updated_timestamp >= now() - interval '7 days'
+group by claim_status;
