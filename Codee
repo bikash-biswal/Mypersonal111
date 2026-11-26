@@ -1,4 +1,9 @@
-select ins_claim_no, claim_intimation_response
-from claimgcintegrationdtls
-where ins_claim_no in ('200401201126110470801', '400601201126110232401', '400402201126110371401')
-order by last_updated_timestamp desc;
+Hi Saurav/Ambika,
+
+Maruti webservice ka 7-din ka data analyze kiya:
+
+Total claims: ~3126, FAILED: 21 (~0.67%) — overall stability acceptable range mein hai.
+In 21 FAILED mein se 18 ka claim number hi generate nahi hua (early-stage validation failure — alag issue, inko separately dekhna hoga).
+3 claims specifically GC-side Oracle error (ORA-00947: not enough values) se fail hue — 'Claim Estimation Save' step pe, GC database insert issue hai. Ye Claims application code ka issue nahi hai, GC-DBA team ko escalate karna hoga (709991 jaisa hi pattern).
+
+Overall sab stages (Registration, Surveyor Appointment, Surveyor Done, Assessment, Settlement) normal volume mein process ho rahe hain. Detailed GC-side errors ke liye GC-DBA escalation recommend karta hoon."
