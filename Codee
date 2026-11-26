@@ -1,1 +1,1 @@
-Hi Sumit, also wanted to check — which code setup are we talking about? Could you share more details so I can prepare before we connect?"
+Hi Raj, KT ke time agar possible ho to screen-share karke ek claim ka poora journey dikha dijiye — code (controller → service → transformer → repository), fir pgAdmin mein uske corresponding data (claimintimationdtls, claimgcintegrationdtls, claimreversesyncdtls tables), aur GC portal pe wahi claim kaise register/update hoti hai. Isse mujhe poora flow ek saath clear ho jayega."
