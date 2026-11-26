@@ -1,6 +1,4 @@
-select n.ins_claim_no, n.oem_name, n.claim_status, n.last_updated_timestamp
-from claimintimationdtls n
-where n.oem_name ilike '%MARUTI%' 
-  and n.claim_status = 'FAILED'
-order by n.last_updated_timestamp desc
-limit 21;
+select ins_claim_no, claim_intimation_response
+from claimgcintegrationdtls
+where ins_claim_no in ('200401201126110470801', '400601201126110232401', '400402201126110371401')
+order by last_updated_timestamp desc;
