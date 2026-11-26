@@ -1,9 +1,1 @@
-Hi Saurav/Ambika,
-
-Maruti webservice ka 7-din ka data analyze kiya:
-
-Total claims: ~3126, FAILED: 21 (~0.67%) — overall stability acceptable range mein hai.
-In 21 FAILED mein se 18 ka claim number hi generate nahi hua (early-stage validation failure — alag issue, inko separately dekhna hoga).
-3 claims specifically GC-side Oracle error (ORA-00947: not enough values) se fail hue — 'Claim Estimation Save' step pe, GC database insert issue hai. Ye Claims application code ka issue nahi hai, GC-DBA team ko escalate karna hoga (709991 jaisa hi pattern).
-
-Overall sab stages (Registration, Surveyor Appointment, Surveyor Done, Assessment, Settlement) normal volume mein process ho rahe hain. Detailed GC-side errors ke liye GC-DBA escalation recommend karta hoon."
+"Maruti webservice 7-day analysis complete. Total claims ~3126, FAILED ~21 (0.67%) — overall stable. 3 claims failed due to GC-side Oracle error (ORA-00947: not enough values) during Claim Estimation Save — escalating to GC-DBA team separately (similar to INC 709991). Remaining 18 failed claims had no claim number generated — early validation failures, separate root cause. All stages (Registration, Surveyor Appointment, Done, Assessment, Settlement) processing normally in expected volume."
