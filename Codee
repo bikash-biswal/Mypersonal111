@@ -1,5 +1,5 @@
-SELECT visof_claim_no, ins_claim_no, upload_status, created_date, remarks
-FROM <schema>.<efile_upload_table>
-WHERE ic_code = 'HIIB'              -- or whatever the IC column is for Hyundai
-  AND created_date BETWEEN '2026-11-01' AND '2026-11-26'
-ORDER BY created_date;
+select claim_status, count(*) 
+from <table_name>
+where oem_name ilike '%HYUNDAI%'
+  and last_updated_timestamp between '2026-11-01' and '2026-11-26'
+group by claim_status;
