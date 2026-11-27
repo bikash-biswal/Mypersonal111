@@ -1,4 +1,4 @@
-select ins_claim_no, gc_claim_registration_response_xml
+select g.ins_claim_no, g.claim_intimation_response
 from claimgcintegrationdtls g
 join claimintimationdtls n on g.ins_claim_no = n.ins_claim_no
 where n.oem_name ilike '%HYUNDAI%'
