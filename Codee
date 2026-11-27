@@ -1,2 +1,6 @@
-select column_name from information_schema.columns 
-where table_name = 'claimgcintegrationdtls';
+select g.claim_status, count(*) 
+from claimgcintegrationdtls g
+join claimintimationdtls n on g.ins_claim_no = n.ins_claim_no
+where n.oem_name ilike '%HYUNDAI%'
+  and g.last_updated_timestamp between '2026-11-01' and '2026-11-26'
+group by g.claim_status;
