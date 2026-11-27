@@ -1,6 +1,6 @@
-select g.claim_status, count(*) 
+select ins_claim_no, gc_claim_registration_response_xml
 from claimgcintegrationdtls g
 join claimintimationdtls n on g.ins_claim_no = n.ins_claim_no
 where n.oem_name ilike '%HYUNDAI%'
   and g.last_updated_timestamp between '2026-11-01' and '2026-11-26'
-group by g.claim_status;
+limit 5;
