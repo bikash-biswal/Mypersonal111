@@ -1,4 +1,1 @@
-SELECT ins_claim_no, visof_claim_no, ins_policy_no, dealer_code, claim_status
-FROM <schema>.claims  -- replace with the actual claims table name in STRATEGICOEM_PROD
-WHERE visof_claim_no IN ('ES01704961', 'ES01710993', 'ES01710762')
-ORDER BY visof_claim_no;
+FAILED — no claim number was generated. We're looking into the cause and will update separately
