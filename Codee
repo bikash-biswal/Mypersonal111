@@ -1,13 +1,5 @@
-Hi Saurav,
-
-Please find the claim number details below:
-
-Estimation ID	Customer	Policy No	Claim Number	Status
-ES01710993	Neeraj	20112005325850369600000	2005032011126110268801	SURVEYOR_APPOINTMENT
-ES01710762	Lovenish Verma	20112005042585031310000	2005042011126110234901	SURVEYOR_APPOINTMENT
-ES01704961	Raghvendra Laxminarayan Shet	20115002026870471200000	—	FAILED — no claim number was generated. We're looking into the cause and will update separately.
-
-Attaching the sheet with the same details for reference.
-
-Regards,
-Rakesh
+SELECT visof_claim_no, ins_claim_no, upload_status, created_date, remarks
+FROM <schema>.<efile_upload_table>
+WHERE ic_code = 'HIIB'              -- or whatever the IC column is for Hyundai
+  AND created_date BETWEEN '2026-11-01' AND '2026-11-26'
+ORDER BY created_date;
