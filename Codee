@@ -1,8 +1,22 @@
-select n.visof_claim_no, n.claim_status, g.claim_intimation_response
-from claimintimationdtls n
-join claimgcintegrationdtls g on n.visof_claim_no = g.visof_claim_no
-where n.oem_name ilike '%MARUTI%'
-  and n.claim_status = 'FAILED'
-  and n.ins_claim_no is null
-order by n.last_updated_timestamp desc
-limit 18;
+Hi Team,
+
+Please find the analysis for Maruti Webservice stability (all stages) for the last 7 days, to conclude the MI services check:
+
+Forward Flow (claimintimationdtls) — Total: 3126 records
+
+SETTLEMENT: 1264
+SURVEYOR_DONE: 818
+CLAIM_ASSESSMENT: 422
+SURVEYOR_APPOINTMENT: 274
+CLAIM_REGISTERED: 312
+RE-INSPECTION: 15
+FAILED: 21
+
+Reverse Sync Flow (claimreversesyncdtls) — Total: 4206 records
+
+No FAILED status found across any stage
+
+Conclusion: Maruti webservice is stable at ~99.3% success rate on the forward flow and 100% on the reverse sync flow. Out of 21 failed cases, 18 failed at early validation stage and 3 failed due to a GC-side Oracle error (ORA-00947) during Claim Estimation Save. Detailed rejection reasons are being compiled and will be shared shortly.
+
+Regards,
+Rakesh
