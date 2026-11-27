@@ -1,6 +1,11 @@
-select g.ins_claim_no, g.claim_intimation_response
+select 
+  case 
+    when (g.claim_intimation_response->>'RejectionMsg') = '' then 'SUCCESS'
+    else 'REJECTED'
+  end as status,
+  count(*)
 from claimgcintegrationdtls g
 join claimintimationdtls n on g.ins_claim_no = n.ins_claim_no
 where n.oem_name ilike '%HYUNDAI%'
   and g.last_updated_timestamp between '2026-11-01' and '2026-11-26'
-limit 5;
+group by status;
