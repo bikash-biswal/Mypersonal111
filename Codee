@@ -1,12 +1,8 @@
-Hi Saurav,
-
-Please find below the analysis for Visof to IC doc services of HIIB (Hyundai), for the period 01 Nov to 26 Nov 2026:
-
-Total cases processed: 3933
-Success: 3933 (100%)
-Rejected: 0
-
-All cases were successfully acknowledged with no rejection messages found in the response data during this period.
-
-Regards,
-Rakesh
+select n.visof_claim_no, n.claim_status, g.claim_intimation_response
+from claimintimationdtls n
+join claimgcintegrationdtls g on n.visof_claim_no = g.visof_claim_no
+where n.oem_name ilike '%MARUTI%'
+  and n.claim_status = 'FAILED'
+  and n.ins_claim_no is null
+order by n.last_updated_timestamp desc
+limit 18;
