@@ -1,10 +1,27 @@
-select 
-  g.claim_intimation_response->>'RejectionMsg' as rejection_reason,
-  count(*)
-from claimintimationdtls n
-join claimgcintegrationdtls g on n.visof_claim_no = g.visof_claim_no
-where n.oem_name ilike '%MARUTI%'
-  and n.claim_status = 'FAILED'
-  and n.last_updated_timestamp >= now() - interval '7 days'
-group by rejection_reason
-order by count(*) desc;
+Hi Team,
+
+Please find the complete analysis for Maruti Webservice stability (all stages), to conclude the MI services check:
+
+Forward Flow (claimintimationdtls) — Total: 3180 records
+
+SETTLEMENT: 1339
+SURVEYOR_DONE: 784
+CLAIM_ASSESSMENT: 448
+SURVEYOR_APPOINTMENT: 263
+CLAIM_REGISTERED: 312
+RE-INSPECTION: 19
+FAILED: 15
+
+Reverse Sync Flow (claimreversesyncdtls) — Total: 4353 records
+
+No FAILED status found across any stage
+
+Rejection Reason breakdown (for 15 FAILED cases):
+
+13 cases: No claim number was generated (ins_claim_no null) and no rejection message was recorded from GC — indicating the request did not receive a complete response from GC (failed at an early stage before processing completed).
+2 cases: Failed during "Claim Estimation Save" on the GC (Genisys) side with error: ORA-00947: not enough values — this is a GC-side Oracle database issue, not related to our Claims application.
+
+Conclusion: Maruti webservice is stable at ~99.5% success rate on the forward flow and 100% on the reverse sync flow. The identified failures are either early-stage GC response issues or known GC-side database errors, already flagged separately.
+
+Regards,
+Rakesh
