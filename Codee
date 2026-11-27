@@ -1,11 +1,12 @@
-select 
-  case 
-    when (g.claim_intimation_response->>'RejectionMsg') = '' then 'SUCCESS'
-    else 'REJECTED'
-  end as status,
-  count(*)
-from claimgcintegrationdtls g
-join claimintimationdtls n on g.ins_claim_no = n.ins_claim_no
-where n.oem_name ilike '%HYUNDAI%'
-  and g.last_updated_timestamp between '2026-11-01' and '2026-11-26'
-group by status;
+Hi Saurav,
+
+Please find below the analysis for Visof to IC doc services of HIIB (Hyundai), for the period 01 Nov to 26 Nov 2026:
+
+Total cases processed: 3933
+Success: 3933 (100%)
+Rejected: 0
+
+All cases were successfully acknowledged with no rejection messages found in the response data during this period.
+
+Regards,
+Rakesh
