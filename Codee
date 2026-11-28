@@ -1,13 +1,1 @@
-select 
-  ins_claim_no,
-  claim_status,
-  gc_claim_intimation_request_xml,
-  gc_claim_intimation_response_xml,
-  gc_claim_validation_request_xml,
-  gc_claim_validation_response_xml,
-  gc_claim_estimation_request_xml,
-  gc_claim_estimation_response_xml,
-  gc_claim_registration_request_xml,
-  gc_claim_registration_response_xml
-from claimgcintegrationdtls
-where ins_claim_no = '400601201126110174701';
+Hi Saurav, I've pulled the XML data for claim 400601201126110174701 across all stages (Intimation / Validation / Estimation / Registration). Could you confirm which stage's XML you specifically need?
