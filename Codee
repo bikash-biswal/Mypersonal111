@@ -1,6 +1,3 @@
-Hi Debarghya,
-
-Please find attached the Estimation stage XML (request & response) for claim no. 400601201126110174701, as advised by Saurav.
-
-Regards,
-Rakesh
+select ins_claim_no, oem_name, claim_status, last_updated_timestamp
+from claimintimationdtls
+where ins_claim_no = '500401201126110238901';
