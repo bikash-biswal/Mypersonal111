@@ -1,13 +1,1 @@
-select 
-  ins_claim_no,
-  claim_status,
-  gc_claim_intimation_request_xml,
-  gc_claim_intimation_response_xml,
-  gc_claim_validation_request_xml,
-  gc_claim_validation_response_xml,
-  gc_claim_estimation_request_xml,
-  gc_claim_estimation_response_xml,
-  gc_claim_registration_request_xml,
-  gc_claim_registration_response_xml
-from claimgcintegrationdtls
-where ins_claim_no = '500401201126110238901';
+gc_intimation_req_xml_500401201126110238901.txt
